@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enect Studio Web player</title>
+    <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #000;
+    }
+      h1{
+        color: #fff
+      }
+      label {
+        color: #fff;
+      }
+        #video-player {
+            width: 100%;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enect Studio </h1>
+
+    <div>
+        <label for="source-input">M3U8 Link here</label>
+        <input id="source-input" type="text" placeholder="Enter HLS video URL">
+        <button onclick="setVideoSource()">Play </button>
+    </div>
+<br>
+<br>
+    <video id="video-player" controls></video>
+
+    <script>
+        function setVideoSource() {
+            var sourceInput = document.getElementById('source-input');
+            var videoPlayer = document.getElementById('video-player');
+
+            videoPlayer.src = sourceInput.value;
+            videoPlayer.load();
+        }
+    </script>
+</body>
+</html>
